@@ -13,6 +13,12 @@
 body {
     margin: 0;
 }
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
 header {
     padding: 16px 25px;
     border-bottom: 1px solid #efefef;
@@ -101,4 +107,43 @@ header {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+
+
+.newposts-h3, .bestposts-h3 {
+    padding: 18px 16px 12px;
+    font-size: 24px;
+    font-family: 'Inter';
+}
+.newposts-all {
+    width: 100%;
+    display: flex;
+    direction: rtl;
+    padding: 5px 10px 10px;
+    box-sizing: border-box;
+    font-family: 'font2';
+    font-size: 15px;
+    color: #0066ff;
+}
+#newposts, #bestposts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+}
+/* قاب با نسبت ۹:۱۶ */
+#newposts a, #bestposts a {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16; 
+    overflow: hidden;
+    border-radius: 1px;
+}
+/* برش از وسط (بالا/پایین یا چپ/راست مساوی) */
+#newposts img, #bestposts img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* برش متناسب */
+    object-position: center; /* برش دقیقاً از وسط */
+    display: block;
 }

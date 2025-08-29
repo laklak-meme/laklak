@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LakLak meme</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&amp;family=Roboto&amp;family=Lobster&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <img src="profile.jpg" alt="پروفایل" style="border-radius: 50%; width: 40px;">
+        <img src="imgs/profile.jpg" alt="پروفایل" style="border-radius: 50%; width: 40px;">
         LakLak meme
     </header>
     <div class="up">
@@ -26,125 +26,69 @@
         <a href="https://www.instagram.com/laklak_meme" target="_blank" class="insta-btn">ورود به پیج اینستاگرام</a>
     </div>
 
-    <!DOCTYPE html>
-    <html lang="fa">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری ویدیویی میم</title>
-    <style>
-      body { margin:0; font-family:sans-serif; background:#fafafa; }
-      #container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 10px;
-        width: 100%;
-        padding: 10px;
-      }
-      .videoCard {
-        background: #eee;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        border-radius: 8px;
-        font-weight: bold;
-        text-align: center;
-        padding: 5px;
-      }
-      #lightbox {
-        position: fixed;
-        top:0; left:0;
-        width:100%; height:100%;
-        background: rgba(0,0,0,0.95);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        z-index: 999;
-      }
-      #lightbox button {
-        position: absolute; top:20px; right:20px;
-        font-size: 35px;
-        color: white;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-      }
-      #lightbox video {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 10px;
-      }
-    
-      /* ریسپانسیو موبایل */
-      @media (max-width: 600px) {
-        .videoCard { height: 120px; font-size: 14px; }
-      }
-      @media (min-width: 601px) and (max-width: 900px) {
-        .videoCard { height: 140px; font-size: 16px; }
-      }
-    </style>
-    </head>
-    <body>
-    
-    <div id="container"></div>
-    
-    <div id="lightbox">
-      <button id="close">✖</button>
-      <video id="lightboxVideo" controls autoplay></video>
-    </div>
-    
-    <script>
-    const videos = [
-      {name: "میم 1", url: "meme1.mp4"},
-      {name: "میم 2", url: "meme1.mp4"},
-      {name: "میم 3", url: "meme1.mp4"},
-      {name: "میم 4", url: "meme1.mp4"},
-      {name: "میم 5", url: "meme1.mp4"},
-      {name: "میم 6", url: "meme1.mp4"},
-    ];
-    
-    const container = document.getElementById("container");
-    
-    videos.forEach(video => {
-      const div = document.createElement("div");
-      div.className = "videoCard";
-      div.innerHTML = <p>${video.name}</p>;
-      div.onclick = () => {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightboxVideo").src = video.url;
-        document.getElementById("lightboxVideo").play();
-      };
-      container.appendChild(div);
-    });
-    
-    document.getElementById("close").onclick = () => {
-      document.getElementById("lightbox").style.display = "none";
-      document.getElementById("lightboxVideo").pause();
-      document.getElementById("lightboxVideo").src = "";
-    };
-    </script>
-    
-    </body>
-    </html>
+    <h3 class="newposts-h3">New Posts</h3>
+    <div id="newposts"></div>
+    <a class="newposts-all" href="posts.html">همه پست ها ...</a>
 
+    <h3 class="bestposts-h3">Best Posts</h3>
+    <div id="bestposts"></div>
 
     <script>
         function pad(n){ return n<10 ? '0'+n : n; }
-
         function updateDateTime() {
-          const now = new Date();
-          // تاریخ شمسی با اعداد لاتین
-          const dateParts = now.toLocaleDateString('fa-IR-u-nu-latn').split('/');
-          const date = `${pad(dateParts[0])}/${pad(dateParts[1])}/${pad(dateParts[2])}`;
-          const time = pad(now.getHours()) + ':' + pad(now.getMinutes());
-          document.getElementById('date').textContent = `${date}  ${time}`;
+            const now = new Date();
+            // تاریخ شمسی با اعداد لاتین
+            const dateParts = now.toLocaleDateString('fa-IR-u-nu-latn').split('/');
+            const date = `${pad(dateParts[0])}/${pad(dateParts[1])}/${pad(dateParts[2])}`;
+            const time = pad(now.getHours()) + ':' + pad(now.getMinutes());
+            document.getElementById('date').textContent = `${date}  ${time}`;
         }
         updateDateTime();
         setInterval(updateDateTime, 600);
+
+        const images1 = [
+            {src: "imgs/posts47.jpeg", link: ""},
+            {src: "imgs/posts46.jpeg", link: ""},
+            {src: "imgs/posts45.jpeg", link: ""},
+            {src: "", link: ""},
+            {src: "imgs/posts43.jpeg", link: ""},
+            {src: "imgs/posts42.jpeg", link: ""}
+        ];
+        const images2 = [
+            {src: "imgs/bestposts1.jpg", link: "https://www.instagram.com/share/reel/_nR7-RCr2"},
+            {src: "imgs/bestposts2.jpeg", link: "https://www.instagram.com/share/reel/BAD4jXi5ux"},
+            {src: "imgs/bestposts3.jpeg", link: "https://www.instagram.com/share/reel/BAKN1CFfy1"}
+        ];
+        const newposts = document.getElementById("newposts");
+        const bestposts = document.getElementById("bestposts");
+        images1.forEach(item => {
+            const a = document.createElement("a");
+            a.href = "#";
+            a.onclick = (e) => {
+                e.preventDefault();
+                if(confirm("میخوای این پست رو داخل اینستاگرام ببینی؟")) {
+                    window.open(item.link, "_blank");
+                }
+            }
+            const img = document.createElement("img");
+            img.src = item.src;
+            a.appendChild(img);
+            newposts.appendChild(a);
+        });
+        images2.forEach(item => {
+            const a = document.createElement("a");
+            a.href = "#";
+            a.onclick = (e) => {
+                e.preventDefault();
+                if(confirm("میخوای این پست رو داخل اینستاگرام ببینی؟")) {
+                    window.open(item.link, "_blank");
+                }
+            }
+            const img = document.createElement("img");
+            img.src = item.src;
+            a.appendChild(img);
+            bestposts.appendChild(a);
+        });
     </script>
 </body>
 </html>

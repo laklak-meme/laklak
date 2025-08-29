@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LakLak meme</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&amp;family=Roboto&amp;family=Lobster&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="imgs/profile.jpg" alt="پروفایل" style="border-radius: 50%; width: 40px;">
+        LakLak meme
+    </header>
+    <div class="up">
+        <div class="up-date" id="date"></div>
+        <div class="up-story"><span style="font-family: font4;">وضعیت شما : </span> انلاین <div style="
+            background-color: #00b500;
+            width: 8px;
+            height: 9px;
+            border-radius: 50%;"></div></div>
+    </div>
+    <div style="font-family: font2;">متاسفانه این بخش هنوز تکمیل نشده.</div>
+
+    <script>
+        function pad(n){ return n<10 ? '0'+n : n; }
+        function updateDateTime() {
+            const now = new Date();
+            // تاریخ شمسی با اعداد لاتین
+            const dateParts = now.toLocaleDateString('fa-IR-u-nu-latn').split('/');
+            const date = `${pad(dateParts[0])}/${pad(dateParts[1])}/${pad(dateParts[2])}`;
+            const time = pad(now.getHours()) + ':' + pad(now.getMinutes());
+            document.getElementById('date').textContent = `${date}  ${time}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 600);
+    </script>
+</body>
+</html>
